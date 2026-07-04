@@ -18,10 +18,10 @@ end
 
 function love.keypressed(key)
 	-- TODO: remove from production build
-	if key == "r" then
+	if key == "r" and love.keyboard.isDown("lctrl") then
 		reload.all()
 		game = require("core.game.game")
-		if love.keyboard.isDown("lctrl") then
+		if love.keyboard.isDown("lctrl") and love.keyboard.isDown("lshift") then
 			print("hard reloading...")
 			state = require("core.game.state")
 			game.init(state)
