@@ -16,9 +16,8 @@ function drag.update(state)
 	end
 
 	if state.drag.active then
-		local c = state.drag.active
-		c.x = mx - state.drag.offsetX
-		c.y = my - state.drag.offsetY
+		state.drag.active.x = mx - state.drag.offsetX
+		state.drag.active.y = my - state.drag.offsetY
 	end
 
 	if not state.mouse.down then
