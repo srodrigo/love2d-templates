@@ -30,7 +30,7 @@ function love.keypressed(key)
 		end
 	end
 
-	input.keypressed(key)
+	input.keypressed(state, key)
 end
 
 function love.mousepressed(x, y, button)
