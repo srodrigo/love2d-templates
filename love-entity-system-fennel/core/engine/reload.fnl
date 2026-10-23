@@ -1,8 +1,8 @@
-(local M {})
+(local reload {})
 
-(fn M.all []
+(fn reload.all []
   (each [k (pairs package.loaded)]
     (when (k:match "^core")
       (tset package.loaded k nil))))
 
-M
+reload

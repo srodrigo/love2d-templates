@@ -1,6 +1,6 @@
-local M = {}
+local reload = {}
 
-function M.all()
+function reload.all()
 	for k in pairs(package.loaded) do
 		if k:match("^core") then
 			package.loaded[k] = nil
@@ -8,4 +8,4 @@ function M.all()
 	end
 end
 
-return M
+return reload
