@@ -1,6 +1,6 @@
 (local reload (require :core.engine.reload))
-(local game (require "core.game.game"))
-(local state (require "core.game.state"))
+(var game (require "core.game.game"))
+(var state (require "core.game.state"))
 
 (local input (require "core.game.systems.input"))
 
@@ -13,16 +13,16 @@
 (fn love.draw []
   (game.draw state))
 
-(fn love.handlers.stdin [key]
+(fn love.keypressed [key]
   ;; TODO: remove from production build
   (if (and (= key "r") (love.keyboard.isDown "lctrl"))
       (do
-        reload.all
-        (game (require "core.game.game"))
+        (reload.all)
+        (set game (require "core.game.game"))
         (if (and (love.keyboard.isDown "lctrl") (love.keyboard.isDown "lshift"))
             (do
               (print "hard reloading...")
-              (state (require "core.game.state"))
+              (set state (require "core.game.state"))
               (game.init state))
             (print "reloading..."))))
   (input.keypressed state key))
