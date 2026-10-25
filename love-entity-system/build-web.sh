@@ -12,13 +12,13 @@ echo "<!DOCTYPE html>
 <html>
 <head>
     <title>Web Game</title>
-    <base href="/play/">
-    <link rel="stylesheet" href="style.css">
+    <base href=\"play/\"/>
+    <link rel=\"stylesheet\" href=\"style.css\"/>
 </head>
 <body>
-    <canvas id="canvas"></canvas>
-    <div id="spinner" class="pending"></div>
-    <script src="player.js?g=game.love"></script>
+    <canvas id=\"canvas\"></canvas>
+    <div id=\"spinner\" class=\"pending\"></div>
+    <script src=\"player.js?g=game.love\"></script>
 </body>
 </html>" >> ./dist/index.html
 
